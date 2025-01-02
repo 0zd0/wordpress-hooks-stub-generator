@@ -1,42 +1,55 @@
 {
-	"name": "onepix/wordpress-hooks-stub-generator",
-	"description": "Generates a JSON representation of the WordPress actions and filters in your code",
-	"type": "library",
-	"license": "GPL-3.0-or-later",
-	"authors": [
-		{
-			"name": "John Blackbourn",
-			"homepage": "https://johnblackbourn.com/"
-		},
-		{
-			"name": "Onepix"
-		}
-	],
-	"config": {
-		"sort-packages": true,
-		"allow-plugins": {
-		}
-	},
-	"bin": [
-		"bin/wp-hooks-generator"
-	],
-	"require": {
-		"php": ">=8.1",
-		"ext-libxml": "*",
-		"erusev/parsedown": "1.8.0-beta-7",
-		"nikic/php-parser": "5.3.1",
-		"phpdocumentor/reflection-docblock": "5.5.1"
-	},
-	"require-dev": {
-		"opis/json-schema": "2.3.0"
-	},
-	"funding": [
-		{
-			"type": "github",
-			"url": "https://github.com/sponsors/johnbillion"
-		}
-	],
-	"replace": {
-		"wp-hooks/generator": "*"
-	}
+    "name": "onepix/wordpress-hooks-stub-generator",
+    "description": "Generates a JSON representation of the WordPress actions and filters in your code",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "John Blackbourn",
+            "homepage": "https://johnblackbourn.com/"
+        },
+        {
+            "name": "Onepix"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+        }
+    },
+    "bin": [
+        "bin/wp-hooks-generator"
+    ],
+    "require": {
+        "php": ">=8.1",
+        "ext-libxml": "*",
+        "erusev/parsedown": "1.8.0-beta-7",
+        "nikic/php-parser": "5.3.1",
+        "phpdocumentor/reflection-docblock": "5.5.1",
+        "ext-dom": "*"
+    },
+    "require-dev": {
+        "opis/json-schema": "2.3.0",
+        "friendsofphp/php-cs-fixer": "^3.65",
+        "phpunit/phpunit": "^9.6",
+        "phpstan/phpstan": "^1.10"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/johnbillion"
+        }
+    ],
+    "replace": {
+        "wp-hooks/generator": "*"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "php-cs-fixer fix --verbose --dry-run",
+        "cs:fix": "php-cs-fixer fix",
+        "check": [
+            "@cs",
+            "@test"
+        ]
+    }
 }
