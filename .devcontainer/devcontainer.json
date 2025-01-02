@@ -1,0 +1,19 @@
+{
+    "name": "WordPress hooks stub generator",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "jetbrains": {
+            "backend": "PhpStorm",
+            "plugins": []
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolder}/.devcontainer/php/php.ini,target=/usr/local/etc/php/conf.d/custom.ini,type=bind",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached,ro",
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gnupg,target=/root/.gnupg,type=bind,consistency=cached,ro",
+    ],
+    "remoteUser": "root",
+    "postCreateCommand": "composer install"
+}
