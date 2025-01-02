@@ -2,19 +2,15 @@
 
 Generates a JSON representation of the WordPress actions and filters in your code. Can be used with WordPress plugins, themes, and core.
 
-Note: If you just want the hook files without generating them yourself, use the following packages instead:
-
-* [wp-hooks/wordpress-core](https://github.com/wp-hooks/wordpress-core) for WordPress core
-
-## Requirements
-
-PHP 8.3 or higher.
-
 ## Installation
 
 ```shell
-composer require wp-hooks/generator
+composer require onepix/wordpress-hooks-stub-generator
 ```
+
+## Requirements
+
+PHP: 8.1+
 
 ## Generating the Hook Files
 
