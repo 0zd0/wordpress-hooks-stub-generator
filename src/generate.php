@@ -15,6 +15,8 @@ use PhpParser\PrettyPrinter\Standard;
 
 require_once file_exists( 'vendor/autoload.php' ) ? 'vendor/autoload.php' : dirname( __DIR__, 4 ) . '/vendor/autoload.php';
 
+const SCHEMA_URL = 'https://raw.githubusercontent.com/0zd0/wordpress-hooks-stub-generator/dev/schema.json';
+
 $options = getopt( '', [
 	"input:",
 	"output:",
@@ -493,7 +495,7 @@ $actions = array_values( array_filter( $output, function( array $hook ) : bool {
 } ) );
 
 $actions = [
-	'$schema' => 'https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json',
+	'$schema' => SCHEMA_URL,
 	'hooks' => $actions,
 ];
 
@@ -505,7 +507,7 @@ $filters = array_values( array_filter( $output, function( array $hook ) : bool {
 } ) );
 
 $filters = [
-	'$schema' => 'https://raw.githubusercontent.com/wp-hooks/generator/1.0.0/schema.json',
+	'$schema' => SCHEMA_URL,
 	'hooks' => $filters,
 ];
 
