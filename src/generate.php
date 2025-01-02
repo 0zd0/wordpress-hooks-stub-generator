@@ -198,7 +198,7 @@ function hooks_parse_files( array $files, string $root, array $ignore_hooks ) : 
 	$output = array();
 
 	// Create a new parser instance
-	$parser = ( new ParserFactory() )->createForNewestSupportedVersion();
+	$parser = ( new ParserFactory() )->createForHostVersion();
 
 	$funcs = [
 		'do_action',
