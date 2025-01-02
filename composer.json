@@ -3,6 +3,12 @@
     "description": "Generates a JSON representation of the WordPress actions and filters in your code",
     "type": "library",
     "license": "GPL-3.0-or-later",
+    "keywords": [
+        "wordpress",
+        "static analysis",
+        "phpstan",
+        "psalm"
+    ],
     "authors": [
         {
             "name": "John Blackbourn",
