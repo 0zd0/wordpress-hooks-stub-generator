@@ -142,7 +142,7 @@ class Generator
                     $hooks[] = $generated;
                 }
             } catch (Exception $e) {
-                echo $e->getMessage() . '\n';
+                echo $e->getMessage() . PHP_EOL;
             }
         }
 
@@ -373,7 +373,7 @@ class Generator
             } else {
                 throw new Exception(
                     sprintf(
-                        'Unknown tag type "%s" (@%s) for hook "%s" in file "%s".\n',
+                        'Unknown tag type "%s" (@%s) for hook "%s" in file "%s".',
                         get_class($tag),
                         $tagName,
                         $this->currentHook,
