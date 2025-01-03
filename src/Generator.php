@@ -351,9 +351,12 @@ class Generator
             } elseif ($tag instanceof DocBlock\Tags\Deprecated) {
                 $content = $tagString;
             } elseif ($tag instanceof DocBlock\Tags\Param) {
-                $types = explode('|', (string) $tag->getType());
-                $variable = '$' . $tag->getVariableName();
-                $content = $formatHtml($content);
+                $type = $tag->getType();
+                if (!is_null($type)) {
+                    $types = explode('|', (string) $type);
+                    $variable = '$' . $tag->getVariableName();
+                    $content = $formatHtml($content);
+                }
             } elseif ($tag instanceof DocBlock\Tags\Link) {
                 $link = $tag->getLink();
                 $content = sprintf(

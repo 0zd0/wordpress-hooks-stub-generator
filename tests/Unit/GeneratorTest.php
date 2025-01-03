@@ -116,6 +116,16 @@ class GeneratorTest extends TestCase
         );
     }
 
+    public function testInvalidDocTypes()
+    {
+        $this->finder
+            ->name(StubFileEnum::INVALID_DOC_TYPES->value . '.php');
+
+        $result = $this->generator->generate();
+
+        self::assertArrayNotHasKey('types', $result->getHooks()[0]['doc']['tags'][1], 'Doc should not have types');
+    }
+
     public function testValidBySchema(): void
     {
         $result = $this->validator->validate($this->stubManager->getStubJson(StubFileEnum::VALIDATE_BY_SCHEMA), $this::getSchemaUrl());

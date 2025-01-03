@@ -12,4 +12,5 @@ enum StubFileEnum: string
     case WITH_VARIABLE = 'with_variable';
     case VALIDATE_BY_SCHEMA = 'test';
     case TEST_NESTED_PATH = 'test_path';
+    case INVALID_DOC_TYPES = 'invalid_doc_types';
 }
