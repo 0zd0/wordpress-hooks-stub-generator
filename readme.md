@@ -60,19 +60,6 @@ You can ignore files or directories in two ways:
 
     ./vendor/bin/wp-hooks-generator --input=src --output=hooks --ignore-files="ignore/this,ignore/that"
 
-### In composer.json
-
-```json
-"extra": {
-    "wp-hooks": {
-        "ignore-files": [
-            "ignore/this",
-            "ignore/that"
-        ]
-    }
-}
-```
-
 ## Ignoring Hooks
 
 You can ignore hooks in two ways:
@@ -80,19 +67,6 @@ You can ignore hooks in two ways:
 ### On the Command Line
 
     ./vendor/bin/wp-hooks-generator --input=src --output=hooks --ignore-hooks="this_hook,that_hook"
-
-### In composer.json
-
-```json
-"extra": {
-    "wp-hooks": {
-        "ignore-hooks": [
-            "this_hook",
-            "that_hook"
-        ]
-    }
-}
-```
 
 ## TypeScript Interfaces for the Hook Files
 
