@@ -1,0 +1,53 @@
+{
+    "$schema": "https://raw.githubusercontent.com/0zd0/wordpress-hooks-stub-generator/dev/schema.json",
+    "hooks": [
+        {
+            "name": "bred1",
+            "file": "all_functions.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "bred2",
+            "file": "all_functions.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "bred3",
+            "file": "all_functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        },
+        {
+            "name": "bred4",
+            "file": "all_functions.php",
+            "type": "filter",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        }
+    ]
+}

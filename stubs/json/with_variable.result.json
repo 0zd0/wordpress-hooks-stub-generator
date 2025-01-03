@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/0zd0/wordpress-hooks-stub-generator/dev/schema.json",
+    "hooks": [
+        {
+            "name": "admin_action_{$action}",
+            "file": "with_variable.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires when an 'action' request variable is sent.",
+                "long_description": "The dynamic portion of the hook name, `$action`, refers to the action derived from the `GET` or `POST` request.",
+                "long_description_html": "<p>The dynamic portion of the hook name, <code>$action</code>, refers to the action derived from the <code>GET</code> or <code>POST</code> request.</p>",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "2.6.0"
+                    }
+                ]
+            },
+            "args": 0
+        }
+    ]
+}

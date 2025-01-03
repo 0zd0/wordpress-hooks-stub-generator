@@ -15,7 +15,7 @@ PHP: 8.1+
 ## Generating the Hook Files
 
 ```shell
-./bin/wp-hooks-generator --input=src --output=hooks
+./bin/generate-hooks --input=src --output=hooks
 ```
 
 ## Usage of the Generated Hook Files in PHP

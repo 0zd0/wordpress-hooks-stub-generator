@@ -1,0 +1,104 @@
+{
+    "$schema": "https://raw.githubusercontent.com/0zd0/wordpress-hooks-stub-generator/dev/schema.json",
+    "hooks": [
+        {
+            "name": "default_action",
+            "aliases": [
+                "default_action_example",
+                "default_action_test"
+            ],
+            "file": "default.php",
+            "type": "action",
+            "doc": {
+                "description": "Filters the value of a network option before it is updated.",
+                "long_description": "This filter is called before a network option is updated in the database. It allows modification of the option value before it is stored.\n Possible hook names include:\n\n  - `default_action_example`\n  - `default_action_test`",
+                "long_description_html": "<p>This filter is called before a network option is updated in the database. It allows modification of the option value before it is stored.</p> <p>Possible hook names include:</p> <ul> <li><code>default_action_example</code></li> <li><code>default_action_test</code></li> </ul>",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "4.4.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "<p>The new, unserialized option value.</p>",
+                        "types": [
+                            "mixed"
+                        ],
+                        "variable": "$value"
+                    },
+                    {
+                        "name": "param",
+                        "content": "<p>Name of the network option.</p>",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$option"
+                    },
+                    {
+                        "name": "return",
+                        "content": "The filtered value of the network option.",
+                        "types": [
+                            "mixed"
+                        ]
+                    },
+                    {
+                        "name": "see",
+                        "content": "",
+                        "refers": "test()"
+                    },
+                    {
+                        "name": "link",
+                        "content": "<a href=\"https://core.trac.wordpress.org/ticket/19321\">https://core.trac.wordpress.org/ticket/19321</a>",
+                        "link": "https://core.trac.wordpress.org/ticket/19321"
+                    },
+                    {
+                        "name": "deprecated",
+                        "content": "5.5.0 Use update_network_option instead."
+                    },
+                    {
+                        "name": "global",
+                        "content": "wpdb $wpdb"
+                    },
+                    {
+                        "name": "private",
+                        "content": ""
+                    },
+                    {
+                        "name": "todo",
+                        "content": "Add better validation for $option parameter"
+                    },
+                    {
+                        "name": "ignore",
+                        "content": "Internal use only"
+                    }
+                ]
+            },
+            "args": 2
+        },
+        {
+            "name": "_core_updated_successfully",
+            "file": "wp-admin/includes/update-core.php",
+            "type": "action",
+            "doc": {
+                "description": "Fires after WordPress core has been successfully updated.",
+                "long_description": "",
+                "tags": [
+                    {
+                        "name": "since",
+                        "content": "3.3.0"
+                    },
+                    {
+                        "name": "param",
+                        "content": "The current WordPress version.",
+                        "types": [
+                            "string"
+                        ],
+                        "variable": "$wp_version"
+                    }
+                ],
+                "long_description_html": ""
+            },
+            "args": 1
+        }
+    ]
+}

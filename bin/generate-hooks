@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use Onepix\WordPressHooksStubGenerator\GeneratorCommand;
+use Symfony\Component\Console\Application;
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
+
+$command = new GeneratorCommand();
+$application = new Application();
+$application->add($command);
+$application->setDefaultCommand($command->getName(), true);
+$application->run();
