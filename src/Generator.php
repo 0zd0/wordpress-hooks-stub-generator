@@ -373,7 +373,7 @@ class Generator
             } else {
                 throw new Exception(
                     sprintf(
-                        'Unknown tag type "%s" (@%s) for hook "%s" in file "%s".',
+                        'Unknown tag type "%s" (@%s) for hook "%s" in file "%s".\n',
                         get_class($tag),
                         $tagName,
                         $this->currentHook,
