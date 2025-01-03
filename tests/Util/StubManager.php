@@ -21,8 +21,9 @@ class StubManager
         StubFileEnum $fileName,
         ?string $postfix = null,
         ?bool $associative = null,
+        ?string $subPath = '',
     ): array|stdClass {
-        $filePath = $this->stubDir . '/json/'. $fileName->value . ($postfix ? ".$postfix" : '') . '.json';
+        $filePath = $this->stubDir . '/json' . ($subPath ? '/' . trim($subPath, '/') : '') . '/' . $fileName->value . ($postfix ? ".$postfix" : '') . '.json';
 
         if (!is_file($filePath)) {
             throw new RuntimeException("File {$filePath} does not exist.");
@@ -34,8 +35,9 @@ class StubManager
     public function getStubJsonResult(
         StubFileEnum $fileName,
         ?bool $associative = null,
+        ?string $subPath = '',
     ): array|stdClass {
-        return $this->getStubJson($fileName, 'result', $associative);
+        return $this->getStubJson($fileName, 'result', $associative, $subPath);
     }
 
     public function getPhpStubFolder(): string

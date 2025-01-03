@@ -1,0 +1,17 @@
+{
+    "$schema": "https://raw.githubusercontent.com/0zd0/wordpress-hooks-stub-generator/dev/schema.json",
+    "hooks": [
+        {
+            "name": "bred",
+            "file": "nested/test_path.php",
+            "type": "action",
+            "doc": {
+                "description": "",
+                "long_description": "",
+                "tags": [],
+                "long_description_html": ""
+            },
+            "args": 0
+        }
+    ]
+}

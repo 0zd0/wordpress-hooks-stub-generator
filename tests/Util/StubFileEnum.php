@@ -11,4 +11,5 @@ enum StubFileEnum: string
     case WITH_IGNORE_FILES = 'with_ignore_files';
     case WITH_VARIABLE = 'with_variable';
     case VALIDATE_BY_SCHEMA = 'test';
+    case TEST_NESTED_PATH = 'test_path';
 }

@@ -100,6 +100,22 @@ class GeneratorTest extends TestCase
         );
     }
 
+    public function testNestedPath()
+    {
+        $this->finder
+            ->name(StubFileEnum::TEST_NESTED_PATH->value . '.php');
+
+        $result = $this->generator->generate();
+
+        $stub = $this->stubManager->getStubJsonResult(StubFileEnum::TEST_NESTED_PATH, true, 'nested');
+
+        self::assertArraysAreEqual(
+            $result->getHooks(),
+            $stub['hooks'],
+            'Actions should be the same'
+        );
+    }
+
     public function testValidBySchema(): void
     {
         $result = $this->validator->validate($this->stubManager->getStubJson(StubFileEnum::VALIDATE_BY_SCHEMA), $this::getSchemaUrl());

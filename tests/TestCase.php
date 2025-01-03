@@ -29,12 +29,13 @@ class TestCase extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->stubManager = new StubManager();
+        $inputDir = $this->stubManager->getPhpStubFolder();
 
         $this->finder = (new Finder())
             ->files()
-            ->in($this->stubManager->getPhpStubFolder());
+            ->in($inputDir);
 
-        $this->generator = new Generator();
+        $this->generator = new Generator(inputDir: $inputDir);
         $this->generator->setFinder($this->finder);
 
         $this->validator = new Validator();

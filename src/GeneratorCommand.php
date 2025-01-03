@@ -81,6 +81,7 @@ class GeneratorCommand extends Command
         $generator = new Generator(
             $ignoreFiles,
             $ignoreHooks,
+            $inputDir,
         );
         $generator->setFinder($finder);
         $result = $generator->generate();

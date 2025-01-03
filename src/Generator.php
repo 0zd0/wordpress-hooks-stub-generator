@@ -31,6 +31,7 @@ class Generator
     public function __construct(
         private array $ignoreFiles = [],
         private array $ignoreHooks = [],
+        private readonly string $inputDir = ''
     ) {
         $this->printer = new Standard();
         $this->markdown = Parsedown::instance();
@@ -222,7 +223,7 @@ class Generator
 
     private function parseFileName(): string
     {
-        $root = $this->currentFile->getPath();
+        $root = $this->inputDir;
         return str_replace("{$root}/", '', $this->currentFile->getPathname());
     }
 
