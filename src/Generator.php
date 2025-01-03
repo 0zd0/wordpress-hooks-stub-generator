@@ -13,6 +13,7 @@ use phpDocumentor\Reflection\DocBlockFactory;
 use PhpParser\Node;
 use PhpParser\Node\Expr;
 use PhpParser\Node\Expr\FuncCall;
+use PhpParser\Node\Name;
 use PhpParser\NodeTraverser;
 use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
@@ -228,7 +229,11 @@ class Generator
     private function getFunction(
         FuncCall $node
     ): ?HookFunctionEnum {
-        return HookFunctionEnum::tryFrom($node->name->toString());
+        if ($node->name instanceof Name) {
+            return HookFunctionEnum::tryFrom($node->name->toString());
+        }
+
+        return null;
     }
 
     private function parseType(
