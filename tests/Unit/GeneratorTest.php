@@ -62,7 +62,7 @@ class GeneratorTest extends TestCase
         $this->finder
             ->name(StubFileEnum::WITH_IGNORE_HOOKS->value . '.php');
 
-        $this->generator->setIgnoreHooks(['bred']);
+        $this->generator->setIgnoreHooks(['bred', '$filter_name']);
         $result = $this->generator->generate();
 
         $stub = $this->stubManager->getStubJsonResult(StubFileEnum::WITH_IGNORE_HOOKS, true);

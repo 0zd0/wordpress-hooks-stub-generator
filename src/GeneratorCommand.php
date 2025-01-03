@@ -24,7 +24,7 @@ class GeneratorCommand extends Command
             ->addOption(
                 CommandOptionEnum::INPUT->value,
                 'i',
-                InputOption::VALUE_REQUIRED,
+                InputOption::VALUE_REQUIRED | InputOption::VALUE_IS_ARRAY,
                 'Source directory containing PHP files to scan'
             )
             ->addOption(
@@ -61,12 +61,18 @@ class GeneratorCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $inputDir = $this->resolvePath($input->getOption('input'));
-        if (!$this->filesystem->exists($inputDir) || !is_dir($inputDir)) {
-            throw new InvalidArgumentException("Input directory '$inputDir' does not exist or is not a directory.");
-        }
+        $inputDirs = [];
+        $rawInputDirs = $input->getOption('input');
         $finder = new Finder();
-        $finder->in($inputDir)->init_default();
+        foreach ($rawInputDirs as $rawInputDir) {
+            $resolvedPath = $this->resolvePath($rawInputDir);
+            if (!$this->filesystem->exists($resolvedPath) || !is_dir($resolvedPath)) {
+                throw new InvalidArgumentException("Input directory '$resolvedPath' does not exist or is not a directory.");
+            }
+            $inputDirs[] = $resolvedPath;
+            $finder->in($resolvedPath);
+        }
+        $finder->init_default();
 
         $ignoreHooks = array_filter(
             explode(',', $input->getOption('ignore-hooks')),
@@ -81,7 +87,7 @@ class GeneratorCommand extends Command
         $generator = new Generator(
             $ignoreFiles,
             $ignoreHooks,
-            $inputDir,
+            $inputDirs,
         );
         $generator->setFinder($finder);
         $result = $generator->generate();

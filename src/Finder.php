@@ -18,7 +18,6 @@ class Finder extends SymfonyFinder
         $this
             ->files()
             ->name('*.php')
-            ->exclude('vendor')
-            ->ignoreVCS(true);
+            ->exclude('vendor');
     }
 }

@@ -35,7 +35,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
             ->files()
             ->in($inputDir);
 
-        $this->generator = new Generator(inputDir: $inputDir);
+        $this->generator = new Generator(inputDirs: [$inputDir]);
         $this->generator->setFinder($this->finder);
 
         $this->validator = new Validator();

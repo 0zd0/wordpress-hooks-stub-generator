@@ -60,7 +60,7 @@
         "wp-hooks/generator": "*"
     },
     "scripts": {
-        "test:generator": "php bin/generate-hooks --input=./stubs --output=./hooks",
+        "test:generator": "php bin/generate-hooks --input=./stubs/php --input=./stubs/php-additional --output=./hooks --ignore-hooks='$filter_name'",
         "test": "phpunit",
         "cs": "php-cs-fixer fix --verbose --dry-run",
         "cs:fix": "php-cs-fixer fix",
